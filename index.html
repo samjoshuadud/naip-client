@@ -51,6 +51,8 @@
 							<li><a href="#abouts" class="nav-link" style="color: #fff; font-weight: 500;">About Me</a></li>
 							<li><a href="#portfolio" class="nav-link" style="color: #fff; font-weight: 500;">Work Showcase</a></li>
 							<li><a href="#blog" class="nav-link" style="color: #fff; font-weight: 500;">Blog</a></li>
+							<li><a href="#affiliations" class="nav-link" style="color: #fff; font-weight: 500;">Affiliations</a></li>
+
 							
 						  </ul>
 						</div><!-- /.navbar-collapse -->
@@ -293,8 +295,8 @@
 	
 	
 	<section id="blog" class="blog sections" style="padding: 80px 0; background: #f9f9f9;">
-		<div class="container">
-			<div class="row">
+			<div class="container">
+				<div class="row">
 				<!-- Section Title -->
 				<div class="col-md-12">
 					<div class="head_title text-center wow fadeIn" data-wow-duration="0.5s">
@@ -373,6 +375,64 @@
 			</div>
 		</div>
 	</section>
+	
+	
+	<section id="affiliations" class="affiliations sections" style="padding: 80px 0; background: #f9f9f9;">
+		<div class="container">
+			<div class="row">
+				<!-- Section Title -->
+				<div class="col-md-12">
+					<div class="head_title text-center wow fadeIn" data-wow-duration="0.5s">
+						<h2>AFFILIATIONS</h2>
+					<div class="separetor"></div>
+					</div>
+				</div>
+
+				<!-- Affiliations Container -->
+				<div class="col-md-12">
+					<div class="row">
+						<!-- Affiliation 1 -->
+						<div class="col-md-4">
+							<div class="affiliation-card wow fadeInUp" data-wow-duration="0.5s" style="background: #fff; border-radius: 4px; padding: 40px 20px; margin-bottom: 30px; text-align: center; transition: all 0.3s ease;">
+								<div class="affiliation-image" style="margin-bottom: 25px;">
+									<img src="images/tm1.jpg" alt="Affiliate 1" style="width: 120px; height: 120px; border-radius: 4px; object-fit: cover;">
+								</div>
+								<h3 style="color: #333; font-size: 18px; margin-bottom: 10px; font-weight: 500;">John Doe</h3>
+								<p style="color: #666; font-size: 14px; margin-bottom: 20px;">Data Scientist</p>
+								<a href="#" class="portfolio-link" style="color: #4a90e2; font-size: 14px; text-decoration: none; font-weight: 500; letter-spacing: 1px;">VIEW PORTFOLIO →</a>
+							</div>
+						</div>
+						
+						<!-- Affiliation 2 -->
+						<div class="col-md-4">
+							<div class="affiliation-card wow fadeInUp" data-wow-duration="0.7s" style="background: #fff; border-radius: 4px; padding: 40px 20px; margin-bottom: 30px; text-align: center; transition: all 0.3s ease;">
+								<div class="affiliation-image" style="margin-bottom: 25px;">
+									<img src="images/tm2.jpg" alt="Affiliate 2" style="width: 120px; height: 120px; border-radius: 4px; object-fit: cover;">
+								</div>
+								<h3 style="color: #333; font-size: 18px; margin-bottom: 10px; font-weight: 500;">Jane Smith</h3>
+								<p style="color: #666; font-size: 14px; margin-bottom: 20px;">Data Engineer</p>
+								<a href="#" class="portfolio-link" style="color: #4a90e2; font-size: 14px; text-decoration: none; font-weight: 500; letter-spacing: 1px;">VIEW PORTFOLIO →</a>
+							</div>
+						</div>
+						
+						<!-- Affiliation 3 -->
+						<div class="col-md-4">
+							<div class="affiliation-card wow fadeInUp" data-wow-duration="0.9s" style="background: #fff; border-radius: 4px; padding: 40px 20px; margin-bottom: 30px; text-align: center; transition: all 0.3s ease;">
+								<div class="affiliation-image" style="margin-bottom: 25px;">
+									<img src="images/tm3.jpg" alt="Affiliate 3" style="width: 120px; height: 120px; border-radius: 4px; object-fit: cover;">
+								</div>
+								<h3 style="color: #333; font-size: 18px; margin-bottom: 10px; font-weight: 500;">Mike Johnson</h3>
+								<p style="color: #666; font-size: 14px; margin-bottom: 20px;">Data Analyst</p>
+								<a href="#" class="portfolio-link" style="color: #4a90e2; font-size: 14px; text-decoration: none; font-weight: 500; letter-spacing: 1px;">VIEW PORTFOLIO →</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
 	
 	<!-- Add spacing div -->
 	<div style="height: 60px; clear: both;"></div>
@@ -511,19 +571,22 @@
 				sections.forEach(section => {
 					const sectionTop = section.offsetTop;
 					const sectionHeight = section.clientHeight;
-					if (pageYOffset >= sectionTop - 150) {
+					const scrollPosition = window.pageYOffset + window.innerHeight/2;
+					if (scrollPosition >= sectionTop && scrollPosition <= (sectionTop + sectionHeight)) {
 						current = section.getAttribute('id');
 					}
 				});
 				
 				navLinks.forEach(link => {
 					link.classList.remove('active');
-					if (link.getAttribute('href').substring(1) === current) {
+					const linkHref = link.getAttribute('href').substring(1);
+					if (linkHref === current) {
 						link.classList.add('active');
 					}
 				});
 			});
 		});
 	</script>
+
 </body>
 </html>

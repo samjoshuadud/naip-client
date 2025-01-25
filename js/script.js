@@ -133,12 +133,12 @@ $('.scrolldown a').bind('click', function () {
 //<!-- ========== navbardown.js ========== -->
 //<!-- =============================================== -->
 
-	$('.nav a').bind('click', function () {
-		$('html , body').stop().animate({
-			scrollTop: $($(this).attr('href')).offset().top - 80
-		}, 1500, 'easeInOutExpo');
-		event.preventDefault();
-	});			
+	// $('.nav a').bind('click', function () {
+	// 	$('html , body').stop().animate({
+	// 		scrollTop: $($(this).attr('href')).offset().top - 80
+	// 	}, 1500, 'easeInOutExpo');
+	// 	event.preventDefault();
+	// });			
 				
 			
 

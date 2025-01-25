@@ -1190,3 +1190,32 @@ body {
     border-color: #fff;
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
+
+/* Affiliations styles */
+.affiliation-card {
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.affiliation-card:hover {
+    transform: translateY(-2px);
+    border-color: #4a90e2;
+}
+
+.affiliation-image {
+    transition: all 0.3s ease;
+}
+
+.portfolio-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.portfolio-link:hover {
+    color: #357abd;
+    padding-left: 5px;
+}
+
+#affiliations {
+    background: #f9f9f9;
+}
